@@ -1,12 +1,12 @@
 require 'pry'
 class Show < ActiveRecord::Base
-  def highest_rating
-    Show.maximum(:rating)
+  def self.highest_rating
+    self.maximum(:rating)
 
   end
 
   def most_popular_show
-     Show.where("rating = ?", highest_rating)
+     .where("rating = ?", highest_rating)
   end
 
   def lowest_rating
