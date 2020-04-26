@@ -2,4 +2,19 @@ class Show < ActiveRecord::Base
 
 end
 
-#Show.maximum(:rating)
+
+def highest_rating
+  Show.maximum(:rating)
+end
+
+def most_popular_show
+   Show.where("rating = ?", Show.maximum(:rating))
+ end
+
+def lowest_rating
+  Show.minimum(:rating)
+end
+
+def least_popular_show
+
+end 
