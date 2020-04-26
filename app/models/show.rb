@@ -5,6 +5,7 @@ end
 
 def highest_rating
   Show.maximum(:rating)
+  binding.pry
 end
 
 def most_popular_show
